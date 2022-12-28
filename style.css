@@ -1,0 +1,31 @@
+/* manage section styles */
+.manageData-container{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    top: 0%;
+    left: 0%;
+    overflow: auto;
+}
+
+#closeBtn{
+    display: block;
+    position: absolute;
+    right: 50px;
+    top: 10px;
+}
+
+#codeShowDiv{
+    padding: 50px;
+    background: rgb(130, 123, 123);
+    border-radius: 20px;
+}
+
+footer{
+    background-color: #212529;
+    color: white;
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+}
