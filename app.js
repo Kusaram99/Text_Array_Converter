@@ -149,10 +149,26 @@ function showCodesFun() {
 copy.addEventListener('click', () => {
     if (data.length > 0) {
         let tempcode = responsePre.innerHTML;
-        navigator.clipboard.writeText(tempcode);
-        alert("Data copy successefully");
+        navigator.clipboard.writeText(tempcode)
+        .then((res)=>alert("Text Successefully copied"))
+        .catch(()=> alert("Somthing is Error!"));
     } else {
         alert("Data Not Found");
+    }
+})
+
+// Clear whole Created data-------
+clearData.addEventListener('click', ()=>{
+    // console.log();
+    if(data.length > 0){
+        if(confirm("Do you want to Clear whole Data?")){
+            localStorage.setItem('shayri', JSON.stringify([]));
+            data = [];
+            showContainer();
+            showCodesFun();
+        }
+    }else{
+        alert("You don't have any data!");
     }
 })
 
