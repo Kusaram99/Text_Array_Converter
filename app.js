@@ -84,20 +84,22 @@ function deleteFun(value) {
 
 // Edit event handler ---------------
 function editFun(value) {
-    let edit = data.filter((elem, ind) => {
-        if (ind === value) {
-            editForTargetValue = ind;
-            return true
-        } else {
-            return false;
-        }
-    });
-    textArea.value = edit[0].name;
-    manageDataContainer.style.display = "none";
-    addButton.style.display = 'none';
-    manageBtn.style.display = "none";
-    cancel.style.display = "inline";
-    update.style.display = "inline";
+    if(confirm("Do you want to update!")){
+        let edit = data.filter((elem, ind) => {
+            if (ind === value) {
+                editForTargetValue = ind;
+                return true
+            } else {
+                return false;
+            }
+        });
+        textArea.value = edit[0].name;
+        manageDataContainer.style.display = "none";
+        addButton.style.display = 'none';
+        manageBtn.style.display = "none";
+        cancel.style.display = "inline";
+        update.style.display = "inline";
+    }
 }
 
 // Update event handler-------------
@@ -116,15 +118,18 @@ function upDateFun() {
     checkBox.checked = false;
     showContainer();
     showCodesFun();
+    alert("Your Data Successfully Updated");
 }
 
 //Cancel Event handler--------------
 cancel.addEventListener('click', cancelFun);
 function cancelFun() {
-    manageDataContainer.style.display = "block";
-    cancel.style.display = "none";
-    update.style.display = "none";
-    showContainer();
+    if(confirm("Do you want to cancel!")){
+        manageDataContainer.style.display = "block";
+        cancel.style.display = "none";
+        update.style.display = "none";
+        showContainer();
+    }
 }
 
 // Print the whole code on display------
