@@ -74,10 +74,12 @@ function showContainer() {
 
 // Delete handler---------------
 function deleteFun(value) {
-    data = data.filter((elem, ind) => ind !== value);
-    localStorage.setItem('shayri', JSON.stringify(data));
-    showContainer();
-    showCodesFun()
+    if(confirm("Are you sure!")){
+        data = data.filter((elem, ind) => ind !== value);
+        localStorage.setItem('shayri', JSON.stringify(data));
+        showContainer();
+        showCodesFun()
+    }
 }
 
 // Edit event handler ---------------
